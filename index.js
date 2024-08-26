@@ -70,17 +70,11 @@ app.put('/put', function (req, res) {
 });
 
 app.get('/get', function (req, res) {
-
-  console.log('req.query.criterion: ', req.query);
   const { id } = req.query;
-  //const result = read.read(parseInt(id)).then(function (x) { return x}).catch( function(err) { console.log(err)});
-  //console.log(result);
-  //console.log(read.read(parseInt(id))
-  console.log(read.read(parseInt(id))
+  read.read(parseInt(id))
     .then(function(x) { console.log(x) })
     .catch(function(err){ console.log(err)})
-    .finally(console.log('End Read!!')));
-
+    .finally(console.log('End Read!!'));
   try {
     res.status(200).json();
   } catch (error) {
